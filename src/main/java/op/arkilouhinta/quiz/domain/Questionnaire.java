@@ -3,31 +3,37 @@ package op.arkilouhinta.quiz.domain;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 
-
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Questions {
+public class Questionnaire {
+
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long questionId;
-	@Getter @Setter private String Question;
+	private long id;
+	private String name;
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy = "questions")
-	private List<Questionaire> questionaires;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "questonnaire")
+	private List<Question> questionList;
+
+	public Questionnaire(String name) {
+		super();
+		this.name = name;
+	}
 	
 	
 }
