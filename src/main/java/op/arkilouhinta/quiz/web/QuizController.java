@@ -5,13 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import op.arkilouhinta.quiz.domain.QuestionaireRepository;
+import op.arkilouhinta.quiz.domain.QuestionnaireRepository;
 
 @Controller
 public class QuizController {
 	
 	@Autowired
-	private QuestionaireRepository repository;
+	private QuestionnaireRepository repository;
 	
 	//Front page
 	@GetMapping
