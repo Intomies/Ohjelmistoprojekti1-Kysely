@@ -20,7 +20,7 @@ public class QuizController {
 	//Front page
 	@GetMapping("/")
 	public String index() {
-		return "/";
+		return "index";
 	}
 	
 	//Show all quoestionnaires in Thymeleaf template
