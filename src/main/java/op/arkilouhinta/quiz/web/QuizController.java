@@ -18,7 +18,7 @@ public class QuizController {
 	private QuestionnaireRepository repository;
 	
 	//Front page
-	@GetMapping("/")
+	@GetMapping("/l")
 	public String index() {
 		return "index";
 	}
