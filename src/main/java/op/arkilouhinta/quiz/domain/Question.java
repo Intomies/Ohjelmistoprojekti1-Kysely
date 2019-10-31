@@ -26,9 +26,9 @@ public class Question {
 	private Long questionId;
 	private String question;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JsonIgnore
-	@JoinColumn(name="questionId")
+	@JoinColumn(name="id")
 	private Questionnaire questionnaire;
 
 	public Question(String question, Questionnaire questionnaire) {

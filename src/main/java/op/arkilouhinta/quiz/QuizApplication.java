@@ -28,15 +28,15 @@ public class QuizApplication {
 			log.info("save 5 questions");
 			
 			//create new questionnaire
-			Questionnaire questionnaire = new Questionnaire("test1");
-			questionnaireRepository.save(questionnaire);
+			Questionnaire tquestionnaire = new Questionnaire("test1");
+			questionnaireRepository.save(tquestionnaire);
 			
 			// create questions
-			Question q1 = new Question("Koulutusohjelma?", questionnaire);
-			Question q2 = new Question("Ikä?", questionnaire);
-			Question q3 = new Question("Miten parantaisit viihtyvyyttä yleisissä tiloissa?", questionnaire);
-			Question q4 = new Question("Miten parantaisit viihtyvyyttä opiskelutiloissa?", questionnaire);
-			Question q5 = new Question("Muuta lisättävää?", questionnaire);
+			Question q1 = new Question("Koulutusohjelma?", tquestionnaire);
+			Question q2 = new Question("Ikä?", tquestionnaire);
+			Question q3 = new Question("Miten parantaisit viihtyvyyttä yleisissä tiloissa?", tquestionnaire);
+			Question q4 = new Question("Miten parantaisit viihtyvyyttä opiskelutiloissa?", tquestionnaire);
+			Question q5 = new Question("Muuta lisättävää?", tquestionnaire);
 			
 			questionRepository.save(q1);
 			questionRepository.save(q2);
@@ -45,10 +45,10 @@ public class QuizApplication {
 			questionRepository.save(q5);
 			
 			
-			log.info("fetch all questions");
-			for (Question question : questionRepository.findAll()) {
-				log.info(question.toString());
-			}
+			/*
+			 * log.info("fetch all questions"); for (Questionnaire questionnaire :
+			 * questionnaireRepository.findAll()) { log.info(questionnaire.toString()); }
+			 */
 
 		};
 	}

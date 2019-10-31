@@ -27,7 +27,7 @@ public class Questionnaire {
 	private long id;
 	private String name;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "questonnaire")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "questionnaire")
 	private List<Question> questionList;
 
 	public Questionnaire(String name) {
