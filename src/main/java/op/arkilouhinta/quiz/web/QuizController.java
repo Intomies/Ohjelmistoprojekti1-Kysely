@@ -17,13 +17,13 @@ public class QuizController {
 	private QuestionnaireRepository repository;
 	
 	//Front page
-	@GetMapping
+	@GetMapping("/")
 	public String index() {
 		return "/";
 	}
 	
 	//Show all quoestionnaires in Thymeleaf template
-	@GetMapping
+	@GetMapping("quoestionnaires")
 	public String questionnares(Model model) {
 		model.addAttribute("quoeastionnaires", repository.findAll());
 		return "quoestionnaires";
