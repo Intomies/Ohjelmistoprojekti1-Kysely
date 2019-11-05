@@ -18,9 +18,9 @@ public class QuizController {
 	private QuestionnaireRepository repository;
 	
 	//Front page
-	@GetMapping("/")
+	@GetMapping("/index")
 	public String index() {
-		return "/";
+		return "index";
 	}
 	
 	//Show all quoestionnaires in Thymeleaf template
