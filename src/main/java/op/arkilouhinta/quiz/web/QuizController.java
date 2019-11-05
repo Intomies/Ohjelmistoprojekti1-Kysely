@@ -20,7 +20,7 @@ public class QuizController {
 	//Front page
 
 
-	@GetMapping("/l")
+	@GetMapping("/")
 	public String index() {
 		return "index";
 	}
