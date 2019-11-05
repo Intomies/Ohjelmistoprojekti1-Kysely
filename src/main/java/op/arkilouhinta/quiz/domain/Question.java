@@ -23,16 +23,16 @@ public class Question {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long questionId;
-	private String question;
+	private String questionText;
 	
 	@ManyToOne
 	@JsonIgnore
-	@JoinColumn(name="id")
+	@JoinColumn(name="questionnaireId")
 	private Questionnaire questionnaire;
 
 	public Question(String question, Questionnaire questionnaire) {
 		super();
-		this.question = question;
+		this.questionText = question;
 		this.questionnaire = questionnaire;
 	}
 	
