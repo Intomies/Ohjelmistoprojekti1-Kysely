@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Kyselyt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Kyselyt</h1>
+	<table>
+		<tr>
+			<th>Kysely</th>
+		</tr>
+
+		<tr th:each="questionnaire : ${questionnaires}">
+			<td th:text="${questionnaire.name}">Questionnaire</td>
+			<td> <a th:href="@{/questionlist}">Kysymyksiin</a></td>
+		</tr>
+	</table>
+	<a href="/addquestionnaire">Lisää kysely</a>
+</body>
+</html>

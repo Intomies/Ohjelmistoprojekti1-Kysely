@@ -30,9 +30,9 @@ public class QuestionnaireRepositoryTests {
 	public void createQuizAndThenDeleteItTest() {
 		Questionnaire quiz = new Questionnaire("Test");
 		repository.save(quiz);
-		assertThat(repository.findById(quiz.getId())).isNotNull();
-		repository.deleteById(quiz.getId());
-		assertThat(repository.findById(quiz.getId())).isEmpty();
+		assertThat(repository.findById(quiz.getQuestionnaireId())).isNotNull();
+		repository.deleteById(quiz.getQuestionnaireId());
+		assertThat(repository.findById(quiz.getQuestionnaireId())).isEmpty();
 	}
 
 

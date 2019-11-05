@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Kysymykset</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Test1</h1>
+	<table>
+		<tr>
+			<th>Kysymys</th>
+		</tr>
+
+		<tr th:each="question : ${questions}">
+			<td th:text="${question.question}">Question</td>
+		</tr>
+	</table>
+	<a href="/addquestion">Lisää kysymys</a>
+</body>
+</html>

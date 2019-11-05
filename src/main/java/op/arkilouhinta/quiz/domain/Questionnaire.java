@@ -24,7 +24,7 @@ public class Questionnaire {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long questionnaireId;
 	private String name;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "questionnaire")
