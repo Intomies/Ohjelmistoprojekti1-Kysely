@@ -46,10 +46,10 @@ public class QuizApplication {
 			
 			
 			
-			  log.info("fetch all questions"); for (Questionnaire questionnaire :
-			  questionnaireRepository.findAll()) { log.info(questionnaire.toString()); }
-			 
-
+			/*
+			 * log.info("fetch all questions"); for (Questionnaire questionnaire :
+			 * questionnaireRepository.findAll()) { log.info(questionnaire.toString()); }
+			 */
 		};
 	}
 }

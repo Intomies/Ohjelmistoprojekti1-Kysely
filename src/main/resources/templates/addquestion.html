@@ -1,20 +1,20 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Add question</title>
+    <title>Lisää kysymys</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Add Question</h1>
+	<h1>Lisää kysymys</h1>
 	<form action="#" th:action="@{/addquestion}"  th:object= ${question} method="post">
 	<input type="hidden" th:field="${question.questionId}" />
-	<label>Question</label></br>
+	<label>Kysymys</label></br>
 	<input type="text" th:field="${question.questionText}" /></br>
-			<label for="questionnairelist">Category: </label>
+			<label for="questionnairelist">Liitä kyselyyn: </label>
 			 <select id="questionnairelist" class="form-control" name="questionnaire">
        			<option value="1">Test1</option>
     		</select>
-	<input type="submit" value="Submit" /> <input type="reset" value="Reset" />
+	<input type="submit" value="Lisää" /> <input type="reset" value="Tyhjennä" />
 	</form>
 </body>
 </html>

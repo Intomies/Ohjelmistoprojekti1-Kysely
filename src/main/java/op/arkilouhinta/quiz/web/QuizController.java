@@ -32,11 +32,6 @@ public class QuizController {
 	public String index() {
 		return "index";
 	}
-	
-	@GetMapping("/index")
-	public String indexTwo() {
-		return "index";
-	}
 
 	// Show all questionnaires in Thymeleaf template
 	@GetMapping("/questionnairelist")
