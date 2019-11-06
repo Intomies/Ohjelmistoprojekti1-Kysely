@@ -45,10 +45,10 @@ public class QuizApplication {
 			questionRepository.save(q5);
 			
 			
-			/*
-			 * log.info("fetch all questions"); for (Questionnaire questionnaire :
-			 * questionnaireRepository.findAll()) { log.info(questionnaire.toString()); }
-			 */
+			
+			  log.info("fetch all questions"); for (Questionnaire questionnaire :
+			  questionnaireRepository.findAll()) { log.info(questionnaire.toString()); }
+			 
 
 		};
 	}
