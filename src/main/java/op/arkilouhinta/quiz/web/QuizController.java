@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import op.arkilouhinta.quiz.domain.QuestionRepository;
 import op.arkilouhinta.quiz.domain.Questionnaire;
 import op.arkilouhinta.quiz.domain.QuestionnaireRepository;
 
+@CrossOrigin
 @Controller
 public class QuizController {
 
@@ -91,13 +93,13 @@ public class QuizController {
 	}
 
 	// Restful get questionnaire by id
-	@GetMapping("questionnaire/{id}")
+	@GetMapping("questionnaires/{id}")
 	public @ResponseBody Optional<Questionnaire> getQuizRest(@PathVariable("id") Long quizId) {
 		return quizRepo.findById(quizId);
 	}
 
 	// Restful get question by id
-	@GetMapping("question/{id}")
+	@GetMapping("questions/{id}")
 	public @ResponseBody Optional<Question> getQuestionRest(@PathVariable("id") Long questionId) {
 		return questionRepo.findById(questionId);
 	}
