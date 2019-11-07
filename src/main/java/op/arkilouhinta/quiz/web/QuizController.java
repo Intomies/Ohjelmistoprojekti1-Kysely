@@ -91,13 +91,13 @@ public class QuizController {
 	}
 
 	// Restful get questionnaire by id
-	@GetMapping("questionnaire/{id}")
+	@GetMapping("questionnaires/{id}")
 	public @ResponseBody Optional<Questionnaire> getQuizRest(@PathVariable("id") Long quizId) {
 		return quizRepo.findById(quizId);
 	}
 
 	// Restful get question by id
-	@GetMapping("question/{id}")
+	@GetMapping("questions/{id}")
 	public @ResponseBody Optional<Question> getQuestionRest(@PathVariable("id") Long questionId) {
 		return questionRepo.findById(questionId);
 	}
