@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import op.arkilouhinta.quiz.domain.Answer;
 import op.arkilouhinta.quiz.domain.AnswerRepository;
 import op.arkilouhinta.quiz.domain.Question;
 import op.arkilouhinta.quiz.domain.QuestionRepository;
@@ -29,7 +30,8 @@ public class QuizController {
 
 	@Autowired
 	private QuestionRepository questionRepo;
-
+	
+	@Autowired
 	private AnswerRepository answerRepo;
 	
 	// Front page
@@ -85,6 +87,18 @@ public class QuizController {
 		questionRepo.save(question);
 		return "redirect:/questionlist";
 	}
+	
+	// Restful get all answers
+		@GetMapping("/answers")
+		public @ResponseBody List<Answer> getAnswers() {
+			return (List<Answer>) answerRepo.findAll();
+		}
+	
+	// Add new answer
+		@PostMapping("/answers")
+		public @ResponseBody Answer saveAnswer(@RequestBody Answer answer) {
+			return answerRepo.save(answer);
+		}
 
 	// ---REST METHODS---
 
