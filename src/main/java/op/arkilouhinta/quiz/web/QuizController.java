@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import op.arkilouhinta.quiz.domain.AnswerRepository;
 import op.arkilouhinta.quiz.domain.Question;
 import op.arkilouhinta.quiz.domain.QuestionRepository;
 import op.arkilouhinta.quiz.domain.Questionnaire;
@@ -29,10 +30,17 @@ public class QuizController {
 	@Autowired
 	private QuestionRepository questionRepo;
 
+	private AnswerRepository answerRepo;
+	
 	// Front page
 	@GetMapping("/")
 	public String index() {
 		return "index";
+	}
+	// Rest home
+	@GetMapping("/resthome")
+	public String restHome() {
+		return "resthome";
 	}
 
 	// Show all questionnaires in Thymeleaf template
