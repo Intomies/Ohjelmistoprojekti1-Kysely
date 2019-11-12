@@ -30,15 +30,16 @@ public class QuizController {
 
 	@Autowired
 	private QuestionRepository questionRepo;
-	
+
 	@Autowired
 	private AnswerRepository answerRepo;
-	
+
 	// Front page
 	@GetMapping("/")
 	public String index() {
 		return "index";
 	}
+
 	// Rest home
 	@GetMapping("/resthome")
 	public String restHome() {
@@ -87,18 +88,6 @@ public class QuizController {
 		questionRepo.save(question);
 		return "redirect:/questionlist";
 	}
-	
-	// Restful get all answers
-		@GetMapping("/answers")
-		public @ResponseBody List<Answer> getAnswers() {
-			return (List<Answer>) answerRepo.findAll();
-		}
-	
-	// Add new answer
-		@PostMapping("/answers")
-		public @ResponseBody Answer saveAnswer(@RequestBody Answer answer) {
-			return answerRepo.save(answer);
-		}
 
 	// ---REST METHODS---
 
@@ -112,6 +101,12 @@ public class QuizController {
 	@GetMapping("/questions")
 	public @ResponseBody List<Question> getQuestionsRest() {
 		return (List<Question>) questionRepo.findAll();
+	}
+
+	// Restful get all answers
+	@GetMapping("/answers")
+	public @ResponseBody List<Answer> getAnswersRest() {
+		return (List<Answer>) answerRepo.findAll();
 	}
 
 	// Restful get questionnaire by id
@@ -132,8 +127,17 @@ public class QuizController {
 		return quizRepo.save(quiz);
 	}
 
-	// Restful save new question? How do we get {questionnaire id} into this method?
-	
-	//TESTIKOMMENTTI
+	// Restful save new question
+	@PostMapping("/questions")
+	public @ResponseBody Question saveQuestionRest(@RequestBody Question question) {
+		return questionRepo.save(question);
+	}
+
+	// Restful add new answer
+	@PostMapping("/answers")
+	public @ResponseBody Answer saveAnswerRest(@RequestBody Answer answer) {
+		return answerRepo.save(answer);
+	}
+	// TESTIKOMMENTTI
 
 }
