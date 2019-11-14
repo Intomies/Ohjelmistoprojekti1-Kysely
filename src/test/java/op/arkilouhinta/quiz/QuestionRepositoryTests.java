@@ -18,7 +18,7 @@ public class QuestionRepositoryTests {
 	
 	@Autowired 
 	private QuestionRepository repository;
-	private Questionnaire quiz = new Questionnaire("Test");
+	private Questionnaire quiz = new Questionnaire("Test", "TTest");
 	
 	@Test
 	public void createNewQuestionandThenDeleteItTest() {
