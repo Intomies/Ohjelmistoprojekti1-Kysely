@@ -91,6 +91,8 @@ public class QuizController {
 
 	// ---REST METHODS---
 
+	//GET-methods
+	
 	// Restful get all questionnaires
 	@GetMapping("/questionnaires")
 	public @ResponseBody List<Questionnaire> getQuizsRest() {
@@ -120,6 +122,8 @@ public class QuizController {
 	public @ResponseBody Optional<Question> getQuestionRest(@PathVariable("id") Long questionId) {
 		return questionRepo.findById(questionId);
 	}
+	
+	//POST-methods
 
 	// Restful save new questionnaire
 	@PostMapping("/questionnaires")
@@ -138,6 +142,5 @@ public class QuizController {
 	public @ResponseBody Answer saveAnswerRest(@RequestBody Answer answer) {
 		return answerRepo.save(answer);
 	}
-	// TESTIKOMMENTTI
-
+	
 }
