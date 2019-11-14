@@ -142,6 +142,38 @@
 </code></pre>
 </div>
 
+<h2>All Answers:</h2>
+
+<div style="padding:10px;">
+<p><strong>Method: </strong>GET <strong>Endpoint: </strong><a th:href="@{/answers}">/answers</a></p>
+<p><strong>JSON Example: </strong></p>
+<pre><code>
+ [
+  {
+   "answerId": 7,
+   "answerText": "Digi"
+  },
+  {
+   "answerId": 8,
+   "answerText": "25"
+  }
+ ]
+</code></pre>
+</div>
+
+<h2>Answer by id:</h2>
+
+<div style="padding:10px;">
+<p><strong>Method: </strong>GET <strong>Endpoint: </strong>(/answers/{id}) <a th:href="@{/answers/7}">/answers/7</a></p>
+<p><strong>JSON Example: </strong></p>
+<pre><code>
+ {
+  "answerId": 7,
+  "answerText": "Digi"
+ }
+</code></pre>
+</div>
+
 <h2>Save new Questionnaire</h2>
 
 <div style="padding:10px;">
@@ -150,7 +182,31 @@
 <pre><code>
  {
   "name": "test2",
-  "questionnaireInfo": "Test Questionnaire",
+  "questionnaireInfo": "Test Questionnaire"
+ }
+</code></pre>
+</div>
+
+<h2>Save new Question</h2>
+
+<div style="padding:10px;">
+<p><strong>Method: </strong>POST <strong>Endpoint: </strong><a th:href="@{/questions}">/questions</a></p>
+<p><strong>JSON Example: </strong></p>
+<pre><code>
+ {
+  "questionText": "Some text for question?"
+ }
+</code></pre>
+</div>
+
+<h2>Save new Answer</h2>
+
+<div style="padding:10px;">
+<p><strong>Method: </strong>POST <strong>Endpoint: </strong><a th:href="@{/answers}">/answers</a></p>
+<p><strong>JSON Example: </strong></p>
+<pre><code>
+ {
+  "answerText": "Some text"
  }
 </code></pre>
 </div>
