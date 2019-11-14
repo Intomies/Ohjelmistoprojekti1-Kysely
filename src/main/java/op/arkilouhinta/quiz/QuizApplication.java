@@ -31,7 +31,7 @@ public class QuizApplication {
 			log.info("save 5 questions");
 			
 			//create new questionnaire
-			Questionnaire tquestionnaire = new Questionnaire("test1");
+			Questionnaire tquestionnaire = new Questionnaire("test1", "Test Questionnaire");
 			questionnaireRepository.save(tquestionnaire);
 			
 			// create questions

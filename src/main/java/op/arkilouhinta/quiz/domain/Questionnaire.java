@@ -23,12 +23,14 @@ public class Questionnaire {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long questionnaireId;
 	private String name;
+	private String questionnaireInfo;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "questionnaire")
 	private List<Question> questionList;
 	
-	public Questionnaire(String name) {
+	public Questionnaire(String name, String questionnaireInfo) {
 		super();
 		this.name = name;
+		this.questionnaireInfo = questionnaireInfo;
 	}
 }
