@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import op.arkilouhinta.quiz.domain.Answer;
+import op.arkilouhinta.quiz.domain.AnswerRepository;
 import op.arkilouhinta.quiz.domain.Question;
 import op.arkilouhinta.quiz.domain.QuestionRepository;
 import op.arkilouhinta.quiz.domain.Questionnaire;
@@ -23,7 +25,8 @@ public class QuizApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner quizDemo(QuestionnaireRepository questionnaireRepository, QuestionRepository questionRepository) { 
+	public CommandLineRunner quizDemo(QuestionnaireRepository questionnaireRepository, QuestionRepository questionRepository,
+			AnswerRepository answerRepository) { 
 		return (args) -> {
 			log.info("save 5 questions");
 			
@@ -43,6 +46,19 @@ public class QuizApplication {
 			questionRepository.save(q3);
 			questionRepository.save(q4);
 			questionRepository.save(q5);
+			
+			// Create answers
+			Answer a1 = new Answer("Digi", q1);
+			Answer a2 = new Answer("25", q2);
+			Answer a3 = new Answer("Olisi mukava saada enemmän viherkasveja yleisiin tiloihin", q3);
+			Answer a4 = new Answer("Opiskelutiloissa voisi olla pöytiä, minkä ääressä voisi tehdä töitä seisten", q4);
+			Answer a5 = new Answer("Espresso saisi olla edullisempi kahvilassa", q5);
+			
+			answerRepository.save(a1);
+			answerRepository.save(a2);
+			answerRepository.save(a3);
+			answerRepository.save(a4);
+			answerRepository.save(a5);
 			
 			
 			

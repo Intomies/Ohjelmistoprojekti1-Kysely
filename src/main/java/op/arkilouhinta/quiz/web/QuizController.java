@@ -123,6 +123,12 @@ public class QuizController {
 		return questionRepo.findById(questionId);
 	}
 	
+	// Restful get answer by id
+	@GetMapping("answers/{id}")
+	public @ResponseBody Optional<Answer> getAnswerRest(@PathVariable("id") Long answerId) {
+		return answerRepo.findById(answerId);
+	}
+	
 	//POST-methods
 
 	// Restful save new questionnaire
