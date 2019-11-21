@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lisää kysely</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<form action="#" th:action="@{/addquestionnaire}"  th:object= ${questionnaire} method="post">
+		<table>
+			<tr><td><input type="hidden" th:field="${questionnaire.questionnaireId}"  /></td></tr>
+			<tr>
+				<td>Kyselyn nimi:</td>
+				<td><input type="text" th:field="${questionnaire.name}" /></td>
+			</tr>
+			<tr>	
+				<td>Kuvaus:</td>
+				<td><input type="text" th:field="${questionnaire.questionnaireInfo}" /></td>
+			</tr>
+			<tr><td><input type="submit" value="Tallenna" /> <input type="reset" value="Tyhjennä" /></td></tr>
+		</table>
+	</form>
+</body>
+</html>

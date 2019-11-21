@@ -13,7 +13,7 @@
 
 		<tr th:each="questionnaire : ${questionnaires}">
 			<td th:text="${questionnaire.name}">Questionnaire</td>
-			<td> <a th:href="@{/questionlist}">Kysymyksiin</a></td>
+			<td> <a th:href="@{/questionnaire/{id}(id=${questionnaire.questionnaireId})}">Kysymyksiin</a></td>
 		</tr>
 	</table>
 	<a href="/addquestionnaire">Lisää kysely</a>

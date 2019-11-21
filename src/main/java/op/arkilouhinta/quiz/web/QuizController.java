@@ -52,6 +52,14 @@ public class QuizController {
 		model.addAttribute("questionnaires", quizRepo.findAll());
 		return "questionnairelist";
 	}
+	
+	@GetMapping(value = "/questionnaire/{id}")
+	public String findReservationById(@PathVariable("id") Long questionnaireId, Questionnaire q, Model model) {
+		model.addAttribute("questionnaire", quizRepo.findById(questionnaireId));
+		List<Question> qList = q.getQuestionList();
+		model.addAttribute("questions", qList);
+		return "questionlist";
+	}
 
 	// Find all questions that are in question repository
 	@GetMapping("/questionlist")
@@ -60,10 +68,10 @@ public class QuizController {
 		return "questionlist";
 	}
 
-	// Empty form for adding a new questionnaire
+	// Empty form for adding a new quiz
 	@GetMapping("/addquestionnaire")
 	public String getEmptyQuizForm(Model model) {
-		model.addAttribute("quiz", new Questionnaire());
+		model.addAttribute("questionnaire", new Questionnaire());
 		return "addquestionnaire";
 	}
 
@@ -71,7 +79,7 @@ public class QuizController {
 	@PostMapping("/addquestionnaire")
 	public String saveQuestionnaire(@ModelAttribute Questionnaire questionnaire) {
 		quizRepo.save(questionnaire);
-		return "questionnairelist";
+		return "redirect:/questionnairelist";
 	}
 
 	// Empty form for adding a new question
@@ -82,7 +90,7 @@ public class QuizController {
 		return "addquestion";
 	}
 
-	// Add new question
+	// Save new question
 	@PostMapping("/addquestion")
 	public String saveQuestion(Question question) {
 		questionRepo.save(question);
