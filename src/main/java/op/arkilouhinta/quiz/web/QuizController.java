@@ -39,6 +39,12 @@ public class QuizController {
 	public String index() {
 		return "index";
 	}
+	
+	// Digi Rest home
+	@GetMapping("/digiresthome")
+	public String digiRestHome() {
+		return "digiresthomepage";
+	}
 
 	// Rest home
 	@GetMapping("/resthome")
