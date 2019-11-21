@@ -25,31 +25,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Question {
+public class QuestionType {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long questionId;
-	private String questionText;
+	private Long questionTypeId;
+	private String typeName;
 	
-	@ManyToOne
+	@OneToMany
 	@JsonBackReference
-	@JoinColumn(name="questionnaireId")
-	private Questionnaire questionnaire;
-	
-	
-	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name="questionTypeId")
-	private QuestionType questiontype;
+	@JoinColumn(name="questionId")
+	private Question question;
 	
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="question")
 	private List<Answer> answerList;
 	
-	public Question(String questionText, Questionnaire questionnaire) {
-		super();
-		this.questionText = questionText;
-		this.questionnaire = questionnaire;
-	}
+	
 }
