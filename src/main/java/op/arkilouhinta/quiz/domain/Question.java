@@ -12,8 +12,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,8 +37,8 @@ public class Question {
 	
 	
 	@ManyToOne
-	@JsonBackReference
-	@JoinColumn(name="questionTypeId")
+	
+	@JoinColumn(name="questionType")
 	private QuestionType questiontype;
 	
 	
