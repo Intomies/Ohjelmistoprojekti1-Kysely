@@ -31,6 +31,11 @@ public class QuestionType {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long questionTypeId;
 	private String typeName;
+	private boolean multipleChoice;
+	private boolean textQuestion;
+	private boolean radioQuestion;
+	private boolean checkBox;
+	private List<String> optionList;
 	
 	@OneToMany
 	@JsonBackReference
@@ -40,6 +45,7 @@ public class QuestionType {
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="question")
 	private List<Answer> answerList;
+	
 	
 	
 }
