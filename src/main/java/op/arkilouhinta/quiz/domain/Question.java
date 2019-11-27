@@ -37,9 +37,8 @@ public class Question {
 	
 	
 	@ManyToOne
-	
 	@JoinColumn(name="questionType")
-	private QuestionType questiontype;
+	private QuestionType questionType;
 	
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="question")

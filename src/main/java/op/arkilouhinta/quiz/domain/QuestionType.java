@@ -31,7 +31,7 @@ public class QuestionType {
 	private boolean textQuestion;
 	private boolean radioQuestion;
 	private boolean checkBox;
-	private List<String> optionList;
+	//private List<String> optionList;
 	
 	@JsonBackReference
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="questionType")
