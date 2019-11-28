@@ -5,16 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h3>Add new questionnaire</h3>
-													
-	<form th:object= ${questionnaire} th:action="@{addquestionnaire}" action="#" method="post">
-		<p></p>
-			<label for="name">Questionnaire name </label> <input type="text" id="name" th:field="*{name}" />
-			<p></p> 
-			<label for="questionnaireInfo">Info</label> <input type="text" id="questionnaireInfo" th:field="*{questionnaireInfo}" /> 
-			<p></p>
-			<input type="submit" value="save" class="btn btn-success"></input>
-		<!-- <table>
+	<h3>Lisää uusi kysely</h3>
+		<form action="#" th:action="@{/addquestionnaire}"  th:object= ${questionnaire} method="post">				
+		<table>
 			<tr>
 				<td>Kyselyn nimi:</td>
 				<td><input type="text" th:field="${questionnaire.name}" /></td>
@@ -24,7 +17,7 @@
 				<td><input type="text" th:field="${questionnaire.questionnaireInfo}" /></td>
 			</tr>
 			<tr><td><input type="submit" value="Tallenna" /> <input type="reset" value="Tyhjennä" /></td></tr>
-		</table> -->
+		</table> 
 	</form>
 </body>
 </html>

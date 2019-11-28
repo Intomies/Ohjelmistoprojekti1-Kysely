@@ -7,5 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface QuestionnaireRepository extends CrudRepository<Questionnaire, Long> {
 
 	List<Questionnaire> findByName(String name);
+	Questionnaire findById(long id);
 	
 }

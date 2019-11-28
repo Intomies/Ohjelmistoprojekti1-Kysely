@@ -4,13 +4,11 @@
 <title>Kysymykset</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<body>
-<!-- 	<h1 th:text="${questionnaire.name}"></h1> -->
+<body> 
 	<table>
 		<tr>
-			<th>Kysymys</th>
+			<th th:text="${questionnaire.name}"></th>
 		</tr>
-
 		<tr th:each="question : ${questions}">
 			<td th:text="${question.questionText}">Question</td>
 		</tr>
