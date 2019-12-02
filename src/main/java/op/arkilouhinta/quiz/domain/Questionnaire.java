@@ -24,7 +24,7 @@ public class Questionnaire {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long questionnaireId;
+	private Long questionnaireId;
 	private String name;
 	private String questionnaireInfo;
 	

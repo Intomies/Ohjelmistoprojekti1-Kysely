@@ -9,10 +9,10 @@
 		<tr>
 			<th th:text="${questionnaire.name}"></th>
 		</tr>
-		<tr th:each="question : ${questions}">
+		<tr th:each="question : ${questionnaire.questionList}">
 			<td th:text="${question.questionText}">Question</td>
 		</tr>
 	</table>
-	<a href="/addquestion">Lisää kysymys</a>
+	<a th:href="@{/questionnaire/{id}/addquestion(id=${questionnaire.questionnaireId})}">Lisää kysymys</a>
 </body>
 </html>

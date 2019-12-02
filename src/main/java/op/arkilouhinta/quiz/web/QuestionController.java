@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,26 +28,28 @@ public class QuestionController {
 	@Autowired
 	private QuestionRepository questionRepo;
 
+	
+	// THIS WON'T BE NEEDED ANYMORE, I GUESS -Harri
 	// Find all questions that are in question repository
-	@GetMapping("/questionlist")
-	public String getQuestions(Model model) {
-		model.addAttribute("questions", questionRepo.findAll());
-		return "questionlist";
-	}
+	/*
+	 * @GetMapping("/questionlist") public String getQuestions(Model model) {
+	 * model.addAttribute("questions", questionRepo.findAll()); return
+	 * "questionlist"; }
+	 */
 
 	// Empty form for adding a new question
-	@GetMapping("/addquestion")
-	public String getEmptyQuestionForm(Model model) {
+	@GetMapping("/questionnaire/{id}/addquestion")
+	public String getEmptyQuestionFormByQuizId(@PathVariable("id") Long questionnaireId, Model model) {
 		model.addAttribute("question", new Question());
-		model.addAttribute("quizs", quizRepo.findAll());
+		model.addAttribute("quiz", quizRepo.findByQuestionnaireId(questionnaireId));
 		return "addquestion";
 	}
 
 	// Save new question
 	@PostMapping("/addquestion")
-	public String saveQuestion(Question question) {
+	public String saveQuestion(@ModelAttribute Question question) {
 		questionRepo.save(question);
-		return "redirect:/questionlist";
+		return "redirect:/questionnaire/1";
 	}
 
 	// ---REST METHODS---

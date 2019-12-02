@@ -6,15 +6,17 @@
 </head>
 <body>
 	<h1>Lisää kysymys</h1>
-<form action="#" th:action="@{/addquestion}"  th:object= "${question}" method="post">
-	<input type="hidden" th:field="${question.questionId}" />
-	<label>Kysymys</label></br>
-	<input type="text" th:field="${question.questionText}" /></br>
-			<label for="questionnairelist">Liitä kyselyyn: </label>
-	<!-- 		 <select id="questionnairelist" class="form-control" name="questionnaire">
-       			<option th:each="quiz: ${quizs}" th:value="$quiz.questionnaireId" th:text="${quiz.name}"></option>
-    		</select> -->
-	<input type="submit" value="Lisää" /> <input type="reset" value="Tyhjennä" />
-	</form> 
+	<form action="#" th:action="@{/addquestion}"  th:object= ${question} method="post">
+		<table>
+			<tr><td><input type="hidden" th:field="${question.questionId}" /></td></tr>
+			<tr>
+				<td>Kysymys:</td>
+				<td><input type="text" th:field="${question.questionText}" /></td>
+			</tr>
+			<tr><td><input type="text" th:field="*{questionnaire.questionnaireId}"/></td></tr>
+			<tr><td><input type="submit" value="Tallenna" /> <input type="reset" value="Tyhjennä" /></td></tr>
+		</table>
+	</form>
 </body>
 </html>
+<!-- quiz.questionnaireId   th:name="${question.questionnaire.questionnaireId}" -->

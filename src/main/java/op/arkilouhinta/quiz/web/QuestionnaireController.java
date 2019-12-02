@@ -35,10 +35,9 @@ public class QuestionnaireController {
 	
 	// Show all questions for selected questionnaire
 	@GetMapping(value = "/questionnaire/{id}")
-	public String findReservationById(@PathVariable("id") long questionnaireId, Questionnaire q, Model model) {
-		model.addAttribute("questionnaire", quizRepo.findById(questionnaireId));
-		List<Question> qList = q.getQuestionList();
-		model.addAttribute("questions", qList);
+	public String findQuizById(@PathVariable("id") Long questionnaireId, Questionnaire q, Model model) {
+		q = quizRepo.findByQuestionnaireId(questionnaireId);
+		model.addAttribute("questionnaire", q);
 		return "questionlist";
 	}
 

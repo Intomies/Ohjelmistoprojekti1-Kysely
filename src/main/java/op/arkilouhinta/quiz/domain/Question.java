@@ -37,7 +37,7 @@ public class Question {
 	
 	
 	@ManyToOne
-	@JoinColumn(name="questionType")
+	@JoinColumn(name="questionTypeId")
 	private QuestionType questionType;
 	
 	
