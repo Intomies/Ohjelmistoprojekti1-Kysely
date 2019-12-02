@@ -47,9 +47,10 @@ public class QuestionController {
 
 	// Save new question
 	@PostMapping("/addquestion")
-	public String saveQuestion(@ModelAttribute Question question) {
+	public String saveQuestion(@ModelAttribute Question question, Long questionnaireId, Model model) {
 		questionRepo.save(question);
-		return "redirect:/questionnaire/1";
+		model.addAttribute("id", quizRepo.findByQuestionnaireId(questionnaireId));
+		return "redirect:/questionnaire/{id}";
 	}
 
 	// ---REST METHODS---
