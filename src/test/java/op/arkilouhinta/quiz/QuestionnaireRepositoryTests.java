@@ -32,7 +32,7 @@ public class QuestionnaireRepositoryTests {
 		repository.save(quiz);
 		assertThat(repository.findById(quiz.getQuestionnaireId())).isNotNull();
 		repository.deleteById(quiz.getQuestionnaireId());
-		assertThat(repository.findById(quiz.getQuestionnaireId())).isEmpty();
+		assertThat(repository.findById(quiz.getQuestionnaireId())).isNull();
 	}
 
 
