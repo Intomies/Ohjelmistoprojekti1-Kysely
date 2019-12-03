@@ -37,6 +37,9 @@ public class Question {
 	private Questionnaire questionnaire;
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="question")
+	private List<MultipleChoice> multipleChoiceList;
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="question")
 	private List<Answer> answerList;
 	
 	public Question(String questionText, Questionnaire questionnaire) {
