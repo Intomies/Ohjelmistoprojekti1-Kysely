@@ -1,5 +1,6 @@
 package op.arkilouhinta.quiz.domain;
 
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,25 +19,22 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class MultipleChoice {
-	
+public class Selection {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long multipleChoiceId;
-	
-	private String choiceText;
+	private Long selectionId;
+	private String option;
 
-	
 	@ManyToOne
 	@JsonBackReference
-	@JoinColumn(name="questionId")
-	private Question question;
+	@JoinColumn(name = "multipleChoiceId")
+	private MultipleChoice multipleChoice;
 
-	public MultipleChoice( Question question) {
+	public Selection(String option, MultipleChoice multipleChoice) {
 		super();
-		this.question = question;
+		this.option = option;
+		this.multipleChoice = multipleChoice;
 	}
-	
-	
-	
+
 }
