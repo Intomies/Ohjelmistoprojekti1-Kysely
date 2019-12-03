@@ -1,5 +1,10 @@
 package op.arkilouhinta.quiz.domain;
 
-public interface SelectionRepository {
+import java.util.List;
 
+import org.springframework.data.repository.CrudRepository;
+
+public interface SelectionRepository extends CrudRepository <Selection, Long> {
+	
+	List<Selection> findBySelectionId(Long id);
 }
