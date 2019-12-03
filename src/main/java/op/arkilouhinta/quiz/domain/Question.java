@@ -36,7 +36,7 @@ public class Question {
 	@JoinColumn(name="questionnaireId")
 	private Questionnaire questionnaire;
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="question")
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="multipleChoiceId")
 	private List<MultipleChoice> multipleChoiceList;
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="question")

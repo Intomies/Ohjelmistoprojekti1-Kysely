@@ -6,11 +6,10 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
-import org.springframework.data.annotation.Id;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -28,12 +27,20 @@ public class MultipleChoice {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long multipleChoiceId;
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="multiplechoice")
-	List<Selection> selectionList;
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="multipleChoice")
+	private List<Selection> selectionList;
 	
 	@ManyToOne
 	@JsonBackReference
 	@JoinColumn(name="questionId")
 	private Question question;
+
+	public MultipleChoice(List<Selection> selectionList, Question question) {
+		super();
+		this.selectionList = selectionList;
+		this.question = question;
+	}
+	
+	
 	
 }

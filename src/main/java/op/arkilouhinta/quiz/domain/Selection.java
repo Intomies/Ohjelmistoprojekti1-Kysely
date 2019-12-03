@@ -28,7 +28,7 @@ public class Selection {
 
 	@ManyToOne
 	@JsonBackReference
-	@JoinColumn(name = "multipleChoice")
+	@JoinColumn(name = "multipleChoiceId")
 	private MultipleChoice multipleChoice;
 
 	public Selection(String option, MultipleChoice multipleChoice) {
