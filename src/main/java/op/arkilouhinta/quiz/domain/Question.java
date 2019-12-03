@@ -29,6 +29,7 @@ public class Question {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long questionId;
 	private String questionText;
+	private boolean required;
 	private boolean isMultipleChoice;
 	
 	@ManyToOne
