@@ -29,12 +29,15 @@ public class Question {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long questionId;
 	private String questionText;
-	private boolean isMultipleChoice;
-	
+		
 	@ManyToOne
 	@JsonBackReference
 	@JoinColumn(name="questionnaireId")
 	private Questionnaire questionnaire;
+	
+	@ManyToOne
+	@JoinColumn(name = "questionTypeId")
+	private QuestionType questionType;
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="question")
 	private List<MultipleChoice> multipleChoiceList;
