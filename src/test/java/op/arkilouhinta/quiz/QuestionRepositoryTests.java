@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import op.arkilouhinta.quiz.domain.Question;
 import op.arkilouhinta.quiz.domain.QuestionRepository;
+import op.arkilouhinta.quiz.domain.QuestionType;
 import op.arkilouhinta.quiz.domain.Questionnaire;
 
 @RunWith(SpringRunner.class)
@@ -19,10 +20,11 @@ public class QuestionRepositoryTests {
 	@Autowired 
 	private QuestionRepository repository;
 	private Questionnaire quiz = new Questionnaire("Test", "TTest");
+	private QuestionType qt = new QuestionType("Text");
 	
 	@Test
 	public void createNewQuestionandThenDeleteItTest() {
-		Question question = new Question("Test", quiz);
+		Question question = new Question("Test", quiz, qt);
 		repository.save(question);
 		assertThat(repository.findById(question.getQuestionId())).isNotNull();
 		repository.deleteById(question.getQuestionId());
