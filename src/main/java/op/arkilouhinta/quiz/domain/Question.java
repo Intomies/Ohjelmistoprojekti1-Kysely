@@ -37,7 +37,7 @@ public class Question {
 	
 
 	@ManyToOne
-	@JsonBackReference
+	
 	@JoinColumn(name = "questionTypeId")
 	private QuestionType questionType;
 	
