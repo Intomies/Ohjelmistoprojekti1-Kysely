@@ -37,19 +37,21 @@ public class Question {
 	
 
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "questionTypeId")
 	private QuestionType questionType;
 	
 
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="multipleChoiceId")
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="question")
 	private List<MultipleChoice> multipleChoiceList;
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="question")
 	private List<Answer> answerList;
 	
-	public Question(String questionText, Questionnaire questionnaire) {
+	public Question(String questionText, Questionnaire questionnaire, QuestionType questionType) {
 		super();
 		this.questionText = questionText;
 		this.questionnaire = questionnaire;
+		this.questionType = questionType;
 	}
 }

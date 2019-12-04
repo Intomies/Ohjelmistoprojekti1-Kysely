@@ -22,7 +22,6 @@ public class MultipleChoice {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long multipleChoiceId;
-
 	private String choiceText;
 
 	@ManyToOne
@@ -30,8 +29,9 @@ public class MultipleChoice {
 	@JoinColumn(name = "questionId")
 	private Question question;
 
-	public MultipleChoice(Question question) {
+	public MultipleChoice(String choiceText, Question question) {
 		super();
+		this.choiceText = choiceText;
 		this.question = question;
 	}
 

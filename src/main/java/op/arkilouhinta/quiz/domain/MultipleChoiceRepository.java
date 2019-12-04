@@ -1,5 +1,7 @@
 package op.arkilouhinta.quiz.domain;
 
-public interface MultipleChoiceRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface MultipleChoiceRepository extends CrudRepository <MultipleChoice, Long> {
 
 }

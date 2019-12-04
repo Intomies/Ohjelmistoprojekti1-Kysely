@@ -21,7 +21,7 @@ public class Answer {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long answerId;
+	private Long answerId;
 	private String answerText;
 	
 	@ManyToOne

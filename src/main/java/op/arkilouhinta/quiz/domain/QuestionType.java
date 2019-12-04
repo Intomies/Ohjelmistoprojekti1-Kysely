@@ -27,9 +27,9 @@ public class QuestionType {
 	@OneToMany(cascade= CascadeType.ALL, mappedBy="questionType")
 	private List<Question> questions;
 	
-	public QuestionType(String questionName) {
+	public QuestionType(String qtName) {
 		super();
-		this.name = questionName;
+		this.name = qtName;
 	}
 	
 	

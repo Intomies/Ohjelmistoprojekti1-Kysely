@@ -8,13 +8,13 @@
 	<h1>Lisää kysymys</h1>
 	<form action="#" th:action="@{/addquestion}"  th:object= ${question} method="post">
 		<table>
-			<tr><td><input type="hidden" th:field="${question.questionId}" />newId</td></tr>
+			<tr><td><input type="hidden" th:field="${question.questionId}" /></td></tr>
 			<tr>
 				<td>Kysymys:</td>
 				<td><input type="text" th:field="${question.questionText}" /></td>
 			</tr>
 			
-			<tr><td><input type="text" th:value="${quiz.questionnaireId}" name="questionnaire.questionnaireId" id="questionnaire.questionnaireId"/></td></tr>
+			<tr><td><input type="hidden" th:value="${quiz.questionnaireId}" name="questionnaire.questionnaireId" id="questionnaire.questionnaireId"/></td></tr>
 			<tr><td><input type="submit" value="Tallenna" /> <input type="reset" value="Tyhjennä" /></td></tr>
 		</table>
 	</form>
