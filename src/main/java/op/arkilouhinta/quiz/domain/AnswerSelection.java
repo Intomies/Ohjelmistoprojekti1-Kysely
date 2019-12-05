@@ -1,15 +1,11 @@
 package op.arkilouhinta.quiz.domain;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -21,25 +17,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Answer {
-	
+public class AnswerSelection {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long answerId;
-	//private String answerText;
-	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="answer")
-	private List<AnswerSelection> answers;
+	private long answerSelectionId;
+	private String answerText;
 	
 	@ManyToOne
 	@JsonBackReference
-	@JoinColumn(name="question")
-	private Question question;
-
-	public Answer(/*String answerText,*/ Question question) {
+	@JoinColumn(name="answer")
+	private Answer answer;
+	
+	public AnswerSelection(String answerText) {
 		super();
-		//this.answerText = answerText;
-		this.question = question;
+		this.answerText = answerText;
 	}
-
 }
