@@ -56,6 +56,8 @@ public class QuizApplication {
 			Question q4 = new Question("Miten parantaisit viihtyvyyttä opiskelutiloissa?", tquestionnaire, qt1);
 			Question q5 = new Question("Muuta lisättävää?", tquestionnaire, qt1);
 			Question q6 = new Question("Valitse lempijuomasi (yksi tai useampi)", tquestionnaire, qt4);
+			Question q7 = new Question("Kumpi on mielestäsi parempi ohjelmointikieli?", tquestionnaire, qt3);
+			Question q8 = new Question("Valitse mielestäsi paras karamelli:", tquestionnaire, qt2);
 			
 			questionRepository.save(q1);
 			questionRepository.save(q2);
@@ -63,15 +65,24 @@ public class QuizApplication {
 			questionRepository.save(q4);
 			questionRepository.save(q5);
 			questionRepository.save(q6);
+			questionRepository.save(q7);
+			questionRepository.save(q8);
 			
 			//Create multiple choices for q6
 			MultipleChoice mc1 = new MultipleChoice("Coca Cola", q6);
 			MultipleChoice mc2 = new MultipleChoice("Fanta", q6);
 			MultipleChoice mc3 = new MultipleChoice("Sprite", q6);
+			MultipleChoice mc4 = new MultipleChoice("Java", q7);
+			MultipleChoice mc5 = new MultipleChoice("Python", q7);
+			MultipleChoice mc6 = new MultipleChoice("Dumle", q8);
+			MultipleChoice mc7 = new MultipleChoice("Geisha", q8);
+			MultipleChoice mc8 = new MultipleChoice("Vanhat Autot", q8);
 			
 			mcRepo.save(mc1);
 			mcRepo.save(mc2);
 			mcRepo.save(mc3);
+			mcRepo.save(mc4);
+			mcRepo.save(mc5);
 			
 			// Create answers
 			Answer a1 = new Answer("Digi", q1);
