@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 public class AnswerSelection {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long answerSelectionId;
+	private Long answerSelectionId;
 	private String answerText;
 	
 	@ManyToOne
