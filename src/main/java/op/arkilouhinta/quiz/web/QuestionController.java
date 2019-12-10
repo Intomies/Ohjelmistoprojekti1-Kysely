@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import op.arkilouhinta.quiz.domain.Question;
 import op.arkilouhinta.quiz.domain.QuestionRepository;
+import op.arkilouhinta.quiz.domain.QuestionTypeRepository;
 import op.arkilouhinta.quiz.domain.QuestionnaireRepository;
 
 @CrossOrigin
@@ -27,6 +28,9 @@ public class QuestionController {
 
 	@Autowired
 	private QuestionRepository questionRepo;
+	
+	@Autowired
+	private QuestionTypeRepository qtRepo;
 
 	
 	// THIS WON'T BE NEEDED ANYMORE, I GUESS -Harri
@@ -42,6 +46,7 @@ public class QuestionController {
 	public String getEmptyQuestionFormByQuizId(@PathVariable("id") Long questionnaireId, Model model) {
 		model.addAttribute("question", new Question());
 		model.addAttribute("quiz", quizRepo.findByQuestionnaireId(questionnaireId));
+		model.addAttribute("qtypes", qtRepo.findAll());
 		return "addquestion";
 	}
 
