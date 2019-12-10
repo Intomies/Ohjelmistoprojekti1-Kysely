@@ -35,11 +35,17 @@ public class Answer {
 	@JsonBackReference
 	@JoinColumn(name="question")
 	private Question question;
+	private String answerText;
 
-	public Answer(/*String answerText,*/ Question question) {
+	public Answer(String answerText, Question question) {
 		super();
-		//this.answerText = answerText;
+		this.answerText = answerText;
 		this.question = question;
+	}
+	
+	// For multiple choice questions 
+	public Answer(MultipleChoice multipleChoice, Question question) {
+
 	}
 
 }

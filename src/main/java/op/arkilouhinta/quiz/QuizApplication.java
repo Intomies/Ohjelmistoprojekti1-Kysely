@@ -79,7 +79,8 @@ public class QuizApplication {
 			Answer a3 = new Answer("Olisi mukava saada enemmän viherkasveja yleisiin tiloihin", q3);
 			Answer a4 = new Answer("Opiskelutiloissa voisi olla pöytiä, minkä ääressä voisi tehdä töitä seisten", q4);
 			Answer a5 = new Answer("Espresso saisi olla edullisempi kahvilassa", q5);
-			Answer a6 = new Answer("Ohtu", q1);
+			// Choose answer from selection
+			Answer a6 = new Answer(mc1, q6);
 			
 			answerRepository.save(a1);
 			answerRepository.save(a2);
