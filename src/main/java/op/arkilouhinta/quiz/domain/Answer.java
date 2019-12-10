@@ -45,11 +45,7 @@ public class Answer {
 	
 	// For multiple choice questions 
 	public Answer(MultipleChoice multipleChoice, Question question) {
-<<<<<<< HEAD
-	
-=======
-		
->>>>>>> 620679fcaeac0f45641979fa6eeb42ae9a90df9f
+
 	}
 
 }

@@ -1,8 +1,5 @@
 package op.arkilouhinta.quiz;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -85,9 +82,7 @@ public class QuizApplication {
 			Answer a4 = new Answer("Opiskelutiloissa voisi olla pöytiä, minkä ääressä voisi tehdä töitä seisten", q4);
 			Answer a5 = new Answer("Espresso saisi olla edullisempi kahvilassa", q5);
 			// Choose answer from selection
-			Answer a6 = new Answer(as, q6);
-			
-			
+			Answer a6 = new Answer(mc1, q6);
 			
 			answerRepository.save(a1);
 			answerRepository.save(a2);
@@ -96,22 +91,12 @@ public class QuizApplication {
 			answerRepository.save(a5);
 			answerRepository.save(a6);
 			
-<<<<<<< HEAD
-			
-	
-			
-			
-=======
+
 			AnswerSelection as1 = new AnswerSelection(mc1.getChoiceText(), a6);
 			AnswerSelection as2 = new AnswerSelection(mc2.getChoiceText(), a6);
 			asRepo.save(as1);
 			asRepo.save(as2);
->>>>>>> 620679fcaeac0f45641979fa6eeb42ae9a90df9f
 			
-			/*
-			 * log.info("fetch all questions"); for (Questionnaire questionnaire :
-			 * questionnaireRepository.findAll()) { log.info(questionnaire.toString()); }
-			 */
 		};
 	}
 }
