@@ -82,7 +82,8 @@ public class QuizApplication {
 			Answer a4 = new Answer("Opiskelutiloissa voisi olla pöytiä, minkä ääressä voisi tehdä töitä seisten", q4);
 			Answer a5 = new Answer("Espresso saisi olla edullisempi kahvilassa", q5);
 			// Choose answer from selection
-			Answer a6 = new Answer(mc1, q6);
+			Answer a6 = new Answer(q6);
+			Answer a7 = new Answer("Ohtu", q1);
 			
 			answerRepository.save(a1);
 			answerRepository.save(a2);
@@ -90,6 +91,7 @@ public class QuizApplication {
 			answerRepository.save(a4);
 			answerRepository.save(a5);
 			answerRepository.save(a6);
+			answerRepository.save(a7);
 			
 
 			AnswerSelection as1 = new AnswerSelection(mc1.getChoiceText(), a6);

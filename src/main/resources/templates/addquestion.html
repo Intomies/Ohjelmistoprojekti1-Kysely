@@ -12,6 +12,10 @@
 			<tr>
 				<td>Kysymys:</td>
 				<td><input type="text" th:field="${question.questionText}" /></td>
+				<td><label for="qtypes">Question Type:</label></td>
+				<td><select id="qtypes" th:field="*{questionType}">
+					<option th:each="qt: ${qtypes}" th:value="${qt.questionTypeId}" th:text="${qt.name}">
+				</select></td>
 			</tr>
 			
 			<tr><td><input type="hidden" th:value="${quiz.questionnaireId}" name="questionnaire.questionnaireId" id="questionnaire.questionnaireId"/></td></tr>

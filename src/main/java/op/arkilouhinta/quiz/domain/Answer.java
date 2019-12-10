@@ -44,8 +44,8 @@ public class Answer {
 	}
 	
 	// For multiple choice questions 
-	public Answer(MultipleChoice multipleChoice, Question question) {
-
+	public Answer(Question question) {
+		this.question = question;
 	}
 
 }
