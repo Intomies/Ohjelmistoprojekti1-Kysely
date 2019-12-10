@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Bean;
 
 import op.arkilouhinta.quiz.domain.Answer;
 import op.arkilouhinta.quiz.domain.AnswerRepository;
+import op.arkilouhinta.quiz.domain.AnswerSelection;
+import op.arkilouhinta.quiz.domain.AnswerSelectionRepository;
 import op.arkilouhinta.quiz.domain.MultipleChoice;
 import op.arkilouhinta.quiz.domain.MultipleChoiceRepository;
 import op.arkilouhinta.quiz.domain.Question;
@@ -30,7 +32,7 @@ public class QuizApplication {
 	
 	@Bean
 	public CommandLineRunner quizDemo(QuestionnaireRepository questionnaireRepository, QuestionRepository questionRepository,
-			QuestionTypeRepository qtRepo, MultipleChoiceRepository mcRepo, AnswerRepository answerRepository) { 
+			QuestionTypeRepository qtRepo, MultipleChoiceRepository mcRepo, AnswerRepository answerRepository, AnswerSelectionRepository asRepo) { 
 		return (args) -> {
 			log.info("save 5 questions");
 			
@@ -82,6 +84,8 @@ public class QuizApplication {
 			// Choose answer from selection
 			Answer a6 = new Answer(mc1, q6);
 			
+			
+			
 			answerRepository.save(a1);
 			answerRepository.save(a2);
 			answerRepository.save(a3);
@@ -89,7 +93,10 @@ public class QuizApplication {
 			answerRepository.save(a5);
 			answerRepository.save(a6);
 			
-			
+			AnswerSelection as1 = new AnswerSelection(mc1.getChoiceText(), a6);
+			AnswerSelection as2 = new AnswerSelection(mc2.getChoiceText(), a6);
+			asRepo.save(as1);
+			asRepo.save(as2);
 			
 			/*
 			 * log.info("fetch all questions"); for (Questionnaire questionnaire :

@@ -28,8 +28,9 @@ public class AnswerSelection {
 	@JoinColumn(name="answer")
 	private Answer answer;
 	
-	public AnswerSelection(String answerText) {
+	public AnswerSelection(String answerText, Answer answer) {
 		super();
 		this.answerText = answerText;
+		this.answer = answer;
 	}
 }

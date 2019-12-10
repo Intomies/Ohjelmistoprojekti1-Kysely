@@ -45,7 +45,7 @@ public class Answer {
 	
 	// For multiple choice questions 
 	public Answer(MultipleChoice multipleChoice, Question question) {
-
+		
 	}
 
 }
