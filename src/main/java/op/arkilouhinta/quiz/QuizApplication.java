@@ -87,6 +87,8 @@ public class QuizApplication {
 			// Choose answer from selection
 			Answer a6 = new Answer(as, q6);
 			
+			
+			
 			answerRepository.save(a1);
 			answerRepository.save(a2);
 			answerRepository.save(a3);
@@ -94,11 +96,17 @@ public class QuizApplication {
 			answerRepository.save(a5);
 			answerRepository.save(a6);
 			
+<<<<<<< HEAD
 			
-			AnswerSelection as = new AnswerSelection(mc1.getChoiceText());
-			asRepo.save(as);
+	
 			
 			
+=======
+			AnswerSelection as1 = new AnswerSelection(mc1.getChoiceText(), a6);
+			AnswerSelection as2 = new AnswerSelection(mc2.getChoiceText(), a6);
+			asRepo.save(as1);
+			asRepo.save(as2);
+>>>>>>> 620679fcaeac0f45641979fa6eeb42ae9a90df9f
 			
 			/*
 			 * log.info("fetch all questions"); for (Questionnaire questionnaire :

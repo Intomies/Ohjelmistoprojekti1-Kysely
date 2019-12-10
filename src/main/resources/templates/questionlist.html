@@ -10,7 +10,8 @@
 			<th th:text="${questionnaire.name}"></th>
 		</tr>
 		<tr th:each="question : ${questionnaire.questionList}">
-			<td th:text="${question.questionText}">Question</td>
+			<td th:if="${question.questionType.name == 'Text'}" th:text="${question.questionText}">Question</td>
+			<td th:if="${question.questionType.name == 'Checkbox'}" th:text="${question.questionText}">Question</td>
 		</tr>
 	</table>
 	<a th:href="@{/questionnaire/{id}/addquestion(id=${questionnaire.questionnaireId})}">Lisää kysymys</a>
