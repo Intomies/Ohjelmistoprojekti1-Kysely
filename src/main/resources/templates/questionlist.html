@@ -19,6 +19,11 @@
 		<tr th:if="${question.questionType.name == 'Text'}" th:each="question : ${questionnaire.questionList}">
 			<td th:text="${question.questionText}">TextQuestion</td>
 		</tr>
+		<tr th:if="${question.questionType.name == 'Radio'}" th:each="question : ${questionnaire.questionList}">
+			<td th:text="${question.questionText}">TextQuestion</td>
+			<td th:if="${question.multipleChoiceList != null}" th:each="mc : ${question.multipleChoiceList}"
+			th:text="${mc.choiceText}">MultipleChoices</td>
+		</tr>
 		
 	</table>
 	<a th:href="@{/questionnaire/{id}/addquestion(id=${questionnaire.questionnaireId})}">Lisää kysymys</a>
