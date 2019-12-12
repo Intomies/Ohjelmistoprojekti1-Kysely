@@ -29,6 +29,7 @@ public class Question {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long questionId;
 	private String questionText;
+	private boolean mandatory;
 
 	@ManyToOne
 	@JsonBackReference
@@ -51,6 +52,14 @@ public class Question {
 	public Question(String questionText, Questionnaire questionnaire, QuestionType questionType) {
 		super();
 		this.questionText = questionText;
+		this.questionnaire = questionnaire;
+		this.questionType = questionType;
+	}
+	
+	public Question(String questionText,boolean mandatory, Questionnaire questionnaire, QuestionType questionType) {
+		super();
+		this.questionText = questionText;
+		this.mandatory = mandatory;
 		this.questionnaire = questionnaire;
 		this.questionType = questionType;
 	}

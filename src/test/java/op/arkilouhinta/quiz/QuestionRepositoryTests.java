@@ -24,7 +24,7 @@ public class QuestionRepositoryTests {
 	
 	@Test
 	public void createNewQuestionAndThenDeleteItTest() {
-		Question question = new Question("Test", quiz, qt);
+		Question question = new Question("Test",true, quiz, qt);
 		repository.save(question);
 		assertThat(repository.findById(question.getQuestionId())).isNotNull();
 		repository.deleteById(question.getQuestionId());
