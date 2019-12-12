@@ -29,7 +29,7 @@ public class AnswerSelectionRepositoryTest {
 	
 	@Test
 	public void createAnswerAndDeleteIt() {
-		AnswerSelection aS1 = new AnswerSelection("Digi");
+		AnswerSelection aS1 = new AnswerSelection("Digi",a1);
 		repository.save(aS1);
 		assertThat(repository.findById(aS1.getAnswerSelectionId())).isNotNull();
 		
