@@ -11,25 +11,23 @@ import org.springframework.test.context.junit4.SpringRunner;
 import op.arkilouhinta.quiz.domain.Question;
 import op.arkilouhinta.quiz.domain.QuestionRepository;
 import op.arkilouhinta.quiz.domain.QuestionType;
+import op.arkilouhinta.quiz.domain.QuestionTypeRepository;
 import op.arkilouhinta.quiz.domain.Questionnaire;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class QuestionRepositoryTests {
-	
-	@Autowired 
-	private QuestionRepository repository;
-	private QuestionType qt = new QuestionType("Text");
-	private Questionnaire quiz = new Questionnaire("Test", "TTest");
-	
+public class QuestionTypeRepositoryTests {
+
+	@Autowired
+	private QuestionTypeRepository repository;
+
 	@Test
 	public void createNewQuestionAndThenDeleteItTest() {
-		Question question = new Question("Test", quiz, qt);
-		repository.save(question);
-		assertThat(repository.findById(question.getQuestionId())).isNotNull();
-		repository.deleteById(question.getQuestionId());
-		assertThat(repository.findById(question.getQuestionId())).isEmpty();
+		QuestionType qt = new QuestionType("Text");
+		repository.save(qt);
+		assertThat(repository.findById(qt.getQuestionTypeId())).isNotNull();
+		repository.deleteById(qt.getQuestionTypeId());
+		assertThat(repository.findById(qt.getQuestionTypeId())).isEmpty();
 	}
-	
 
 }
