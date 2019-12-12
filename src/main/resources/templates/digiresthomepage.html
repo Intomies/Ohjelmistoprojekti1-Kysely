@@ -15,34 +15,71 @@
 <p><strong>JSON Example: </strong></p>
 <pre><code>
 {
- "questionnaireId": 1,
- "name": "test1",
- "questionnaireInfo": "Test Questionnaire",
- "questionList":
- [
-  {
-  "questionId": 2,
-  "questionText": "Koulutusohjelma?",
-  "answerList":
-  [
-   {
-    "answerId": 7,
-    "answerText": "Digi"
-   }
-  ]
- },
- {
-  "questionId": 3,
-  "questionText": "Ikä?",
-  "answerList":
-   [
-    {
-     "answerId": 8,
-     "answerText": "25"
-    }
-   ]
-  }
- ]
+questionnaireId: 1,
+name: "test1",
+questionnaireInfo: "Test Questionnaire",
+questionList: [
+	{
+	questionId: 6,
+	questionText: "Koulutusohjelma?",
+	mandatory: false,
+	questionType: {
+	questionTypeId: 2,
+	name: "Text"
+	},
+	multipleChoiceList: [ ],
+	answerList: [
+		{
+		answerId: 18,
+		answers: [ ],
+		answerText: "Digi"
+		},
+		{
+		answerId: 24,
+		answers: [ ],
+		answerText: "Ohtu"
+		}
+	]
+	},
+	{
+	questionId: 11,
+	questionText: "Valitse lempijuomasi (yksi tai useampi)",
+	mandatory: false,
+	questionType: {
+	questionTypeId: 5,
+	name: "Checkbox"
+	},
+	multipleChoiceList: [
+		{
+		multipleChoiceId: 13,
+		choiceText: "Coca Cola"
+		},
+		{
+		multipleChoiceId: 14,
+		choiceText: "Fanta"
+		},
+		{
+		multipleChoiceId: 15,
+		choiceText: "Sprite"
+		}
+		],
+	answerList: [
+		{
+		answerId: 23,
+		answers: [
+			{
+			answerSelectionId: 26,
+			answerText: "Coca Cola"
+			},
+			{
+			answerSelectionId: 27,
+			answerText: "Fanta"
+			}
+		],
+		answerText: null
+		}
+		]
+	}
 }
 
 </code></pre>
@@ -54,17 +91,28 @@
 <p><strong>Method: </strong>GET <strong>Endpoint: </strong>(/questions/{id}) <a th:href="@{/questions/2}">/questions/2</a></p>
 <p><strong>JSON Example: </strong></p>
 <pre><code>
- {
-  "questionId": 2,
-  "questionText": "Koulutusohjelma?",
-  "answerList":
-  [
-   {
-    "answerId": 7,
-    "answerText": "Digi"
-   }
-  ]
- }
+{
+	questionId: 6,
+	questionText: "Koulutusohjelma?",
+	mandatory: false,
+	questionType: {
+		questionTypeId: 2,
+		name: "Text"
+	},
+	multipleChoiceList: [ ],
+	answerList: [
+		{
+			answerId: 18,
+			answers: [ ],
+			answerText: "Digi"
+		},
+		{
+			answerId: 24,
+			answers: [ ],
+			answerText: "Ohtu"
+		}
+	]
+}
 </code></pre>
 </div>
 
